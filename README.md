@@ -5,5 +5,4 @@ This application goes along with a bigger gesture recognition system. The system
 # Installation
 To install this repository, use the green tab to clone or download the zip file. As this app is dependent on a cloud server and a Raspberry Pi robot, the code will not work as expected without those materials.
 # Usage (add code screenshots)
-# License
 # Check out our Wiki for FAQs and More!
