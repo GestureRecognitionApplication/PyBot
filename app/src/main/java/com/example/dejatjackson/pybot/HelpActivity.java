@@ -1,7 +1,6 @@
 package com.example.dejatjackson.pybot;
 
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 public class HelpActivity extends AppCompatActivity {
 
