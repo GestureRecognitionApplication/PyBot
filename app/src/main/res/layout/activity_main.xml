@@ -7,6 +7,13 @@
     android:orientation="vertical"
     tools:context="com.example.dejatjackson.pybot.MainActivity">
 
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Robot Control "
+        android:textSize="30sp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="98dp"
@@ -14,7 +21,8 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="54dp"
             android:layout_weight="1"
             app:srcCompat="@drawable/red" />
 
@@ -24,71 +32,78 @@
             android:layout_height="72dp"
             android:layout_weight="1"
             android:text="TextView" />
+
     </LinearLayout>
 
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
-        <Button
-            android:id="@+id/buttonForward"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Move Forward" />
-
-        <Button
-            android:id="@+id/buttonBack"
+        <ImageButton
+            android:id="@+id/right "
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Move Backward" />
-    </LinearLayout>
+            android:layout_marginEnd="64dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/right"
+            tools:layout_editor_absoluteY="115dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/buttonLeft"
+        <ImageButton
+            android:id="@+id/left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Turn Left" />
+            android:layout_marginStart="56dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/left"
+            tools:layout_editor_absoluteY="126dp" />
 
-        <Button
-            android:id="@+id/buttonRight"
+        <ImageButton
+            android:id="@+id/down"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Turn Right" />
-    </LinearLayout>
+            app:srcCompat="@drawable/down"
+            tools:layout_editor_absoluteX="156dp"
+            tools:layout_editor_absoluteY="209dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/button360"
+        <ImageButton
+            android:id="@+id/up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Rotate 360" />
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="36dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/up" />
 
-        <Button
-            android:id="@+id/buttonStop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Stop" />
-    </LinearLayout>
+        <ImageButton
+            android:id="@+id/imageButton6"
+            android:layout_width="62dp"
+            android:layout_height="69dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/down"
+            app:layout_constraintEnd_toStartOf="@+id/right "
+            app:layout_constraintHorizontal_bias="0.595"
+            app:layout_constraintStart_toEndOf="@+id/left"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton2"
+            app:srcCompat="@mipmap/ic_launcher_round" />
+
+        <ImageButton
+            android:id="@+id/imageButton7"
+            android:layout_width="61dp"
+            android:layout_height="56dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/car2" />
+    </android.support.constraint.ConstraintLayout>
+
 </LinearLayout>
