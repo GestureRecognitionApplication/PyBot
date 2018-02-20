@@ -11,14 +11,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //TODO: Make the Image change based on the bluetooth connection
 
-
-        Button buttonForward = findViewById(R.id.buttonForward);
-        Button buttonBack = findViewById(R.id.buttonBack);
-        Button buttonLeft = findViewById(R.id.buttonLeft);
+        Button btRight = findViewById(R.id.right);
+        Button btLeft = findViewById(R.id.left);
+        Button btUp = findViewById(R.id.up);
+        Button btDown = findViewById(R.id.up);
 
         //do this for the other buttons as well
 
+        //TODO: Make the buttons actually work to move the Robot (based on up, down, etc..)
 
 
     }
