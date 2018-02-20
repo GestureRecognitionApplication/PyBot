@@ -11,3 +11,8 @@ public class CloudActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cloud);
     }
 }
+
+//TODO: Link to cloud
+//TODO: Link to robot
+//TODO: Menu bar
+//TODO: Back button link to main page

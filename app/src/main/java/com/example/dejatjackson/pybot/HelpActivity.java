@@ -11,3 +11,7 @@ public class HelpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_help);
     }
 }
+
+//TODO:  add scrolling effect
+//TODO: back button link to main page
+//TODO: Menu bar
