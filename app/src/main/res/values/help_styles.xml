@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="QTextTheme" parent="android:Theme.Material">
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:background">#12000000</item> //12 = 255 * .07 (I want opacity = 7%) and 000000 is black in hex
+        <item name="android:fontFamily">@font/arvo</item>
+    </style>
+
+    <style name="ATextTheme" parent="android:Theme.Material">
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/arvo</item>
+    </style>
+
+    <style name="FAQTextTheme" parent="android:Theme.Material">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:background">#12000000</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:fontFamily">@font/arvo</item>
+    </style>
+</resources>

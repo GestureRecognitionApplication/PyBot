@@ -1,138 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+<ScrollView android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
 
         <TextView
             android:id="@+id/text_view_id"
-            android:layout_width="match_parent"
-            android:scrollbars="vertical"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="FAQs"
-            android:textAlignment="center"
-            android:textSize="30sp" />
+            style="@style/FAQTextTheme"
+            android:text="@string/FAQ" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:scrollbars="vertical"
-        android:layout_height="wrap_content"
-        android:text="What does the Red Circle on the Homepage signify? "
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textView"
+            style="@style/QTextTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Q1" />
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:scrollbars="vertical"
-        android:layout_height="wrap_content"
-        android:text="The red circle signifies the Robot is not connected to the Application via bluetooth. If this button appears, ensure the robot is powered and that check it’s bluetooth connection. Also ensure bluetooth is on for the mobile device." />
+        <TextView
+            android:id="@+id/textView1"
+            style="@style/ATextTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/A1" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:scrollbars="vertical"
-        android:layout_height="wrap_content"
-        android:text="What does the Green Circle on the Homepage signify?  "
-        android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Q2"
+            style="@style/QTextTheme"/>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:scrollbars="vertical"
-        android:layout_height="wrap_content"
-        android:text="The green circle signifies the robot is accurately connected to the mobile application via bluetooth.
- " />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ATextTheme"
+            android:text="@string/A2" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="match_parent"
-        android:scrollbars="vertical"
-        android:layout_height="wrap_content"
-        android:text="How do the voice commands work?  "
-        android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/QTextTheme"
+            android:text="@string/Q3"/>
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="match_parent"
-        android:scrollbars="vertical"
-        android:layout_height="wrap_content"
-        android:text="In order to execute a voice command use the Voice command button to begin recording. Also, click the button when you’re finished recording. The recorded speech will be turned into text and the message will appear on the screen. If the speech is one of the recognized commands of the robot, the robot will execute a command a popup will come up showing the command the robot has just executed.
-" />
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ATextTheme"
+            android:text="@string/A3" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="match_parent"
-        android:scrollbars="vertical"
-        android:layout_height="wrap_content"
-        android:text="Where can I obtain more information?"
-        android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/QTextTheme"
+            android:text="@string/Q4" />
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="match_parent"
-        android:scrollbars="vertical"
-        android:layout_height="wrap_content"
-        android:text="To obtain more information regarding this project, please visit the Github page at:" />
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ATextTheme"
+            android:text="@string/A4" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="match_parent"
-        android:scrollbars="vertical"
-        android:layout_height="wrap_content"
-        android:text="What cloud service does the app run on?"
-        android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/QTextTheme"
+            android:text="@string/Q5"/>
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="match_parent"
-        android:scrollbars="vertical"
-        android:layout_height="wrap_content"
-        android:text="Amazon Web Services (AWS)" />
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ATextTheme"
+            android:text="@string/A5" />
 
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="match_parent"
-        android:scrollbars="vertical"
-        android:layout_height="wrap_content"
-        android:text="How does the app receive cloud messages?"
-        android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Q6"
+            style="@style/QTextTheme"/>
 
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="match_parent"
-        android:scrollbars="vertical"
-        android:layout_height="wrap_content"
-        android:text="The app uses Amazon Gateway Rest API paired with AmazonDB to retrieve the most recent gesture or voice command from the cloud." />
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ATextTheme"
+            android:text="@string/A6" />
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="match_parent"
-        android:scrollbars="vertical"
-        android:layout_height="wrap_content"
-        android:text="How does the robot receive messages?"
-        android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/QTextTheme"
+            android:text="@string/Q7"/>
 
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="match_parent"
-        android:scrollbars="vertical"
-        android:layout_height="wrap_content"
-        android:text="IThe robot is connected over bluetooth to the app. It is sent the command through that communication pathway." />
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ATextTheme"
+            android:text="@string/A7" />
 
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="match_parent"
-        android:scrollbars="vertical"
-        android:layout_height="wrap_content"
-        android:text="Do I need to be connected to Wifi in order for this app to work?"
-        android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/QTextTheme"
+            android:text="@string/Q8"/>
 
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="match_parent"
-        android:scrollbars="vertical"
-        android:layout_height="wrap_content"
-        android:text="Yes, as the cloud server depends on Wifi for retrieval of commands" />
-
-</LinearLayout>
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ATextTheme"
+            android:text="@string/A8" />
+     </LinearLayout>
+</ScrollView>

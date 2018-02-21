@@ -1,3 +1,20 @@
-<resources>
+<resources xmlns:text-align="http://schemas.android.com/tools">
     <string name="app_name">PyBot</string>
+    <string name="FAQ">FAQs</string>
+    <string name="Q1">What does the Red Circle on the Homepage signify? </string>
+    <string name="Q2">What does the Green Circle on the Homepage signify?  </string>
+    <string name="Q3">How do the voice commands work?</string>
+    <string name="Q4">Where can I obtain more information?</string>
+    <string name="Q5">What cloud service does the app run on?</string>
+    <string name="Q6">How does the app receive cloud messages?</string>
+    <string name="Q7">How does the robot receive messages?</string>
+    <string name="Q8">Do I need to be connected to Wifi in order for this app to work?</string>
+    <string name="A1">The red circle signifies the Robot is not connected to the Application via bluetooth. If this button appears, ensure the robot is powered and that check it’s bluetooth connection. Also ensure bluetooth is on for the mobile device.</string>
+    <string name="A2">The green circle signifies the robot is accurately connected to the mobile application via bluetooth.</string>
+    <string name="A3">In order to execute a voice command use the Voice command button to begin recording. Also, click the button when you’re finished recording. The recorded speech will be turned into text and the message will appear on the screen. If the speech is one of the recognized commands of the robot, the robot will execute a command a popup will come up showing the command the robot has just executed.</string>
+    <string name="A4">To obtain more information regarding this project, please visit the Github page at:</string>
+    <string name="A5">Amazon Web Services (AWS)</string>
+    <string name="A6">The app uses Amazon Gateway Rest API paired with AmazonDB to retrieve the most recent gesture or voice command from the cloud.</string>
+    <string name="A7">The robot is connected over bluetooth to the app. It is sent the command through that communication pathway.</string>
+    <string name="A8">Yes, as the cloud server depends on Wifi for retrieval of commands.</string>
 </resources>
