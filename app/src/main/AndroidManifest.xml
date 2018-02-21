@@ -17,7 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".VoiceActivity" />
-        <activity android:name=".HelpActivity" />
+        <activity android:name=".HelpActivity"
+            android:exported = "true"
+        />
         <activity android:name=".CloudActivity"></activity>
     </application>
 
