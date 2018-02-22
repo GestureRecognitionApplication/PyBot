@@ -13,7 +13,7 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/circle"
             android:layout_width="wrap_content"
             android:layout_height="54dp"
             android:layout_weight="1"
@@ -34,6 +34,7 @@
         android:id="@+id/control"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#00000000"
         android:text="Robot Controls"
         android:textAlignment="center"
         android:textSize="30sp"
@@ -42,25 +43,38 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="#00000000">
 
         <ImageButton
             android:id="@+id/right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="64dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="68dp"
+            android:layout_marginTop="8dp"
+            android:background="#00000000"
             android:contentDescription="right"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.414"
             app:layout_editor_absoluteY="115dp"
-            app:srcCompat="@drawable/right"/>
+            app:srcCompat="@drawable/right" />
 
         <ImageButton
             android:id="@+id/left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="188dp"
             android:layout_marginStart="56dp"
+            android:layout_marginTop="8dp"
+            android:background="#00000000"
             android:contentDescription="left"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.984"
             app:layout_editor_absoluteY="126dp"
             app:srcCompat="@drawable/left" />
 
@@ -68,9 +82,16 @@
             android:id="@+id/down"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/down"
+            android:layout_marginBottom="112dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="#00000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_editor_absoluteX="156dp"
-            app:layout_editor_absoluteY="209dp" />
+            app:layout_editor_absoluteY="209dp"
+            app:srcCompat="@drawable/down" />
 
         <ImageButton
             android:id="@+id/up"
@@ -79,6 +100,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="36dp"
+            android:background="#00000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -92,6 +114,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:background="#00000000"
             app:layout_constraintBottom_toTopOf="@+id/down"
             app:layout_constraintEnd_toStartOf="@+id/right"
             app:layout_constraintHorizontal_bias="0.595"
@@ -99,6 +122,14 @@
             app:layout_constraintTop_toBottomOf="@+id/up"
             app:layout_constraintVertical_bias="0.7"
             app:srcCompat="@drawable/button360" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            tools:layout_editor_absoluteX="270dp"
+            tools:layout_editor_absoluteY="298dp" />
 
     </android.support.constraint.ConstraintLayout>
 
