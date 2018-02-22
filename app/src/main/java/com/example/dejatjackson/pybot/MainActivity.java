@@ -31,6 +31,20 @@ public class MainActivity extends AppCompatActivity {
         ImageButton btUp = findViewById(R.id.up);
         ImageButton btDown = findViewById(R.id.down);
         ImageButton bt360 = findViewById(R.id.button360);
+        btRight.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                sendCommandRight();
+            }
+        });
+        btLeft.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                sendCommandLeft();
+            }
+        });
 
 
         //TODO: Make the buttons actually work to move the Robot (based on up, down, etc..)
@@ -43,6 +57,21 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, VoiceActivity.class));
             }
         });
+        private void sendCommandRight() {
+            //TODO: Insert Code Here
+        }
+        private void sendCommandLeft() {
+            //TODO: Insert Code Here
+        }
+        private void sendCommandForward() {
+            //TODO: Insert Code Here
+        }
+        private void sendCommandBackwards() {
+            //TODO: Insert Code Here
+        }
+        private void sendCommand360() {
+            //TODO: Insert Code Here
+        }
 
     }
 
