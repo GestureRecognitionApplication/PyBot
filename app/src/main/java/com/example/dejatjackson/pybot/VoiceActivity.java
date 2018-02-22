@@ -1,5 +1,6 @@
 package com.example.dejatjackson.pybot;
 
+import android.os.Handler;
 import android.widget.TextView;
 //package com.stacktips.speechtotext;
 
@@ -75,11 +76,18 @@ public class VoiceActivity extends AppCompatActivity {
     private void sendRobotCommand() {
         //TODO: Insert Code Here for a Robot Command toast to actually work -- currently this a test message
         Toast toast=Toast.makeText(this, "Pybot hasn't been connected yet", Toast.LENGTH_LONG);
-            toast.show();
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                toast.cancel();
+            }
+        }, 500);
         }
-            //"PyBot is moving left"
+            //"PyBot is turning left"
             //"PyBot is turning 360 degrees"
-            //"PyBot is moving right"
+            //"PyBot is turning right"
             //"PyBot is moving backwards"
             //"PyBot is moving forwards"
             //"PyBot has not received a recognized command"
