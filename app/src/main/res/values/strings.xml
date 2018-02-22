@@ -10,8 +10,8 @@
     <string name="Q7">How do the voice commands work?</string>
     <string name="Q8">How can I find the recognized voice commands?</string>
     <string name="Q9">Where can I obtain more information?</string>
-    <string name="A1">Yes, as the cloud server depends on Wifi for retrieval of commands.</string>
-    <string name="A2">Amazon Web Services (AWS).</string>
+    <string name="A1">Yes. The app uses a cloud server to retrieve gesture and voice commands that then get sent to the robot.</string>
+    <string name="A2">The cloud server that the app uses to retrieve data is Amazon Web Services (AWS).</string>
     <string name="A3">The app uses Amazon Gateway Rest API paired with AmazonDB to retrieve the most recent gesture or voice command from the cloud.</string>
     <string name="A4">The robot is connected over bluetooth to the app. It is sent the command through that communication pathway.</string>
     <string name="A5">The red circle signifies the Robot is not connected to the Application via bluetooth. If this button appears, ensure the robot is powered and that check it’s bluetooth connection. Also ensure bluetooth is on for the mobile device.</string>
