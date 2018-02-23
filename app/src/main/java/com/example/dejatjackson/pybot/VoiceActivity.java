@@ -81,7 +81,7 @@ public class VoiceActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                toast.cancel();
+                 toast.cancel();
             }
         }, 500);
         }
