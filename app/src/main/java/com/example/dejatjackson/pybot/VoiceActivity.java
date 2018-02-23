@@ -75,7 +75,7 @@ public class VoiceActivity extends AppCompatActivity {
     //Send Robot Command
     private void sendRobotCommand() {
         //TODO: Insert Code Here for a Robot Command toast to actually work -- currently this a test message
-        Toast toast=Toast.makeText(this, "Pybot hasn't been connected yet", Toast.LENGTH_LONG);
+        final Toast toast=Toast.makeText(this, "Pybot hasn't been connected yet", Toast.LENGTH_LONG);
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -115,4 +115,4 @@ public class VoiceActivity extends AppCompatActivity {
 //TODO: Check the Bluetooth Connection
 //TODO: Pop-Up to Tell the User to Connect the Pi and Phone to Bluetooth if the Circle is Red
 //TODO: Make the Robot Button Work to Send the Command to the Robot & Connect Via Bluetooth to the Robot (May need to Connect to a Script on the Robot
-//ToDO: Make a toast come up to confirm the motion the robot executes
+//TODO: Make a toast come up to confirm the motion the robot executes

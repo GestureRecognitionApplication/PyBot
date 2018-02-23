@@ -1,5 +1,6 @@
 package com.example.dejatjackson.pybot;
 
+import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Handler;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,8 +23,31 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // ImageView redCircle = findViewById(R.id.circle);
+        //Setup Bluetooth Connection and Make sure it is enabled
+        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        if (mBluetoothAdapter == null) {
+            // Device doesn't support Bluetooth
+        }
+        if (!mBluetoothAdapter.isEnabled()) {
+            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT); //when not enabled asks the user if they'd like to enable bluetooth
+        }
+
+        //TODO: Enable and Connect Bluetooth device (maybe by MAC???)
+        //TODO: Should I connect as server or as client?
+
+
+
+
+        ImageView circle = findViewById(R.id.circle);
         //TODO: Make the Image change based on the bluetooth connection
+            //Use the BluetoothProfile.ServiceListener ??? - tells if connected or disconnected
+            //if connected
+                //circle.setImageResource(R.drawable.green);
+                //connection.set change the text to Robot Connected
+           //if not connected
+                //circle.setImageResource(R.drawable.red);
+                //Change the text to RObot Not connected
 
         //TODO: Make the Text change based on the bluetooth Connection
 
