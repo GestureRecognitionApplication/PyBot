@@ -1,7 +1,12 @@
 package com.example.dejatjackson.pybot;
 
 import android.bluetooth.BluetoothAdapter;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -29,11 +34,11 @@ public class MainActivity extends AppCompatActivity {
         if (mBluetoothAdapter == null) {
             // Device doesn't support Bluetooth
         }
-        if (!mBluetoothAdapter.isEnabled()) {
+    /*    if (!mBluetoothAdapter.isEnabled()) {
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
            // startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT); //when not enabled asks the user if they'd like to enable bluetooth
         }
-
+*/
         //TODO: Enable and Connect Bluetooth device (maybe by MAC???)
         //TODO: Should I connect as server or as client?
         //TODO: Change the Connection Status if its connected
