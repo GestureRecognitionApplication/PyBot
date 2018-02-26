@@ -1,6 +1,7 @@
 package com.example.dejatjackson.pybot;
 
 import android.os.Handler;
+import android.support.v7.app.AlertDialog;
 import android.widget.TextView;
 //package com.stacktips.speechtotext;
 
@@ -38,14 +39,8 @@ public class VoiceActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startVoiceInput();
             }
-        }); //set the onClick to the Voice Recognizer Built in
-        /*robotBt.setOnLongClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                startVoiceHelp();
-            }
-        }); //set the onClick to the Robot Command */
+        });
+        //set the onClick to the Robot Command*/
         robotBt.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -61,22 +56,20 @@ public class VoiceActivity extends AppCompatActivity {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
-        intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Hello, Say a one-word voice command?");
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Say a Command! Recognized Commands: Spin, Left, Right, Back, Forward");
+
         try {
             startActivityForResult(intent, REQ_CODE_SPEECH_INPUT);
         } catch (ActivityNotFoundException a) {
 
         }
     }
-    //Voice Help Dialogue
-    private void startVoiceHelp() {
-        //TODO: Insert Code Here for a Dialog
-    }
     //Send Robot Command
     private void sendRobotCommand() {
         //TODO: Insert Code Here for a Robot Command toast to actually work -- currently this a test message
-        final Toast toast=Toast.makeText(this, "Pybot hasn't been connected yet", Toast.LENGTH_LONG);
 
+        final Toast toast=Toast.makeText(this, "Pybot hasn't been connected yet", Toast.LENGTH_LONG);
+        toast.show();
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override

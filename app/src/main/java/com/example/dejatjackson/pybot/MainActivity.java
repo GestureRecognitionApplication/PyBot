@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private TextView rConnection;
-    Boolean connectionStatus;
+    boolean connectionStatus = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,13 +49,13 @@ public class MainActivity extends AppCompatActivity {
         TextView connec = findViewById(R.id.connection);
         //TODO: Make the Image change based on the bluetooth connection
             //Use the BluetoothProfile.ServiceListener ??? - tells if connected or disconnected
-            if(connectionStatus) {
+           if(connectionStatus) {
                 circle.setImageResource(R.drawable.green);
-                connec.setText("Robot Connected");
+               // connec.setText("Robot Connected");
             }
             if(!connectionStatus) {
                 circle.setImageResource(R.drawable.red);
-                connec.setText("Robot Not Connected");
+               // connec.setText("Robot Not Connected");
             }
         //TODO: Make the Text change based on the bluetooth Connection
 
