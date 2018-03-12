@@ -102,9 +102,6 @@ public class VoiceActivity extends AppCompatActivity {
         }
     }
 }
-//TODO: On  Long Click Listener --> Create a Dialog for the Voice Commands
-//TODO: Make the Voice Activity Work
-//TODO: Add some help Icon for the Voice Commands they can submit
 //TODO: Check the Bluetooth Connection
 //TODO: Pop-Up to Tell the User to Connect the Pi and Phone to Bluetooth if the Circle is Red
 //TODO: Make the Robot Button Work to Send the Command to the Robot & Connect Via Bluetooth to the Robot (May need to Connect to a Script on the Robot

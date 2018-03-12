@@ -24,15 +24,36 @@ import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.InputStream;
+import java.util.Set;
 import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
 
-    BluetoothSocket mmSocket;
+    BluetoothSocket mmSocket = null;
     BluetoothDevice mmDevice = null;
     private TextView rConnection;
-    boolean connectionStatus = true;
+    boolean connectionStatus = false;
 
+    public void sendBtMsg(String mes) {
+        UUID uuid = UUID.fromString("94f39d29-7d6d-437d-973b-fba39e49d4ee"); //Standard SerialPortService ID
+        try {
+
+            mmSocket = mmDevice.createRfcommSocketToServiceRecord(uuid);
+            if (!mmSocket.isConnected()){
+                mmSocket.connect();
+            }
+
+            String msg = mes;
+            OutputStream mmOutputStream = mmSocket.getOutputStream();
+            mmOutputStream.write(msg.getBytes()); //Sends Messages
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,30 +64,41 @@ public class MainActivity extends AppCompatActivity {
         if (mBluetoothAdapter == null) {
             // Device doesn't support Bluetooth
         }
-    /*    if (!mBluetoothAdapter.isEnabled()) {
+        if (!mBluetoothAdapter.isEnabled()) {
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-           // startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT); //when not enabled asks the user if they'd like to enable bluetooth
+            startActivityForResult(enableBtIntent, 0); //when not enabled asks the user if they'd like to enable bluetooth
         }
-*/
-        //TODO: Enable and Connect Bluetooth device (maybe by MAC???)
-        //TODO: Should I connect as server or as client?
-        //TODO: Change the Connection Status if its connected
+        //Paired Devices
+        Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
+        if(pairedDevices.size() > 0) {
+            for (BluetoothDevice device : pairedDevices) {
+                if (device.getName().equals("raspberrypi")) //Note, you will need to change this to match the name of your device
+                {
+                    Log.e("Pybot", device.getName());
+                    mmDevice = device;
+                    break;
+                }
+            }
+            connectionStatus = true;
+        }
+
+        //TODO: Enable and Connect Bluetooth device (maybe by MAC???) or this UUID thing?
+        //TODO: Make sure Connection Status is changing correctly
 
 
 
         ImageView circle = findViewById(R.id.circle);
         TextView connec = findViewById(R.id.connection);
-        //TODO: Make the Image change based on the bluetooth connection
             //Use the BluetoothProfile.ServiceListener ??? - tells if connected or disconnected
            if(connectionStatus) {
                 circle.setImageResource(R.drawable.green);
-               // connec.setText("Robot Connected");
+                connec.setText("Robot Connected");
             }
             if(!connectionStatus) {
                 circle.setImageResource(R.drawable.red);
-               // connec.setText("Robot Not Connected");
+                connec.setText("Robot Not Connected");
             }
-        //TODO: Make the Text change based on the bluetooth Connection
+        //TODO: Is the text changing correctly?
 
         //TODO: Pop-Up to Tell the User to Connect the Pi and Phone to Bluetooth if the Circle is Red
 
@@ -175,28 +207,6 @@ public class MainActivity extends AppCompatActivity {
                     toast2.cancel();
                 }
             }, 500);
-        }
-
-        public void sendBtMsg(String mes) {
-            //TODO: Figure out the UUID
-            UUID uuid = UUID.fromString("94f39d29-7d6d-437d-973b-fba39e49d4ee"); //Standard SerialPortService ID
-            try {
-
-                mmSocket = mmDevice.createRfcommSocketToServiceRecord(uuid);
-                if (!mmSocket.isConnected()){
-                    mmSocket.connect();
-                }
-
-                String msg = mes;
-                OutputStream mmOutputStream = mmSocket.getOutputStream();
-                mmOutputStream.write(msg.getBytes()); //Sends Messages
-
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-
-
         }
 
 
