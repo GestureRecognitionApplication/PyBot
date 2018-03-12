@@ -1,6 +1,8 @@
 package com.example.dejatjackson.pybot;
 
 import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothSocket;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -12,15 +14,22 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.util.Log;
+import android.view.Menu;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.UUID;
+
 public class MainActivity extends AppCompatActivity {
 
-
+    BluetoothSocket mmSocket;
+    BluetoothDevice mmDevice = null;
     private TextView rConnection;
     boolean connectionStatus = true;
 
@@ -116,14 +125,16 @@ public class MainActivity extends AppCompatActivity {
     }
         private void sendCommandRight() {
             //TODO: Insert Code Here for Functionality
-
+            sendBtMsg("4");
+            //TODO: Add a Delay
             Toast toast=Toast.makeText(this, "PyBot is turning right", Toast.LENGTH_LONG);
             toast.show();
             closeToast(toast);
         }
         private void sendCommandLeft() {
             //TODO: Insert Code Here for Functionality
-
+            sendBtMsg("3");
+            //TODO: Add a Delay
             Toast toast=Toast.makeText(this, "PyBot is turning left", Toast.LENGTH_LONG);
             toast.show();
             closeToast(toast);
@@ -131,24 +142,25 @@ public class MainActivity extends AppCompatActivity {
         }
         private void sendCommandForward() {
             //TODO: Insert Code Here for Functionality
-
+            sendBtMsg("1");
+            //TODO: Add a Delay
             Toast toast=Toast.makeText(this, "PyBot is moving forwards", Toast.LENGTH_LONG);
             toast.show();
             closeToast(toast);
 
         }
         private void sendCommandBackwards() {
-            //TODO: Insert Code Here  for Functionality
-
-
+            //TODO: Insert Code Here for Functionality
+            sendBtMsg("2");
+            //TODO: Add a Delay
             Toast toast=Toast.makeText(this, "PyBot is moving backwards", Toast.LENGTH_LONG);
             toast.show();
             closeToast(toast);
         }
         private void sendCommand360() {
-            //TODO: Insert Code Here  for Functionality
-
-
+            //TODO: Insert Code Here for Functionality
+            sendBtMsg("5");
+            //TODO: Add a Delay
             Toast toast=Toast.makeText(this, "PyBot is turning 360 degrees", Toast.LENGTH_LONG);
             toast.show();
             closeToast(toast);
@@ -165,6 +177,27 @@ public class MainActivity extends AppCompatActivity {
             }, 500);
         }
 
+        public void sendBtMsg(String mes) {
+            //TODO: Figure out the UUID
+            UUID uuid = UUID.fromString("94f39d29-7d6d-437d-973b-fba39e49d4ee"); //Standard SerialPortService ID
+            try {
+
+                mmSocket = mmDevice.createRfcommSocketToServiceRecord(uuid);
+                if (!mmSocket.isConnected()){
+                    mmSocket.connect();
+                }
+
+                String msg = mes;
+                OutputStream mmOutputStream = mmSocket.getOutputStream();
+                mmOutputStream.write(msg.getBytes()); //Sends Messages
+
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+
+        }
 
 
 }
