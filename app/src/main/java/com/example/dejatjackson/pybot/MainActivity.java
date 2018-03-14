@@ -28,7 +28,7 @@ import java.io.InputStream;
 import java.util.Set;
 import java.util.UUID;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseDrawerActivity {
 
     BluetoothSocket mmSocket = null;
     BluetoothDevice mmDevice = null;
@@ -57,7 +57,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
+        getLayoutInflater().inflate(R.layout.activity_main,frameLayout);
+        setTitle("Main");
+
 
         //Setup Bluetooth Connection and Make sure it is enabled
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -208,6 +211,11 @@ public class MainActivity extends AppCompatActivity {
                 }
             }, 500);
         }
-
+    @Override
+    protected void OnResume()
+    {
+        super.onResume();
+        navigationView.getMenu().getItem(0).setChecked(true);
+    }
 
 }
