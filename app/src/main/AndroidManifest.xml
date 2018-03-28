@@ -21,7 +21,9 @@
         <activity android:name=".HelpActivity"
             android:exported = "true"
         />
-        <activity android:name=".CloudActivity"></activity>
+        <activity android:name=".CloudActivity"
+            android:exported="true"
+            />
     </application>
 
 </manifest>
