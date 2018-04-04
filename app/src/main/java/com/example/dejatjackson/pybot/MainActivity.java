@@ -28,7 +28,7 @@ import java.io.InputStream;
 import java.util.Set;
 import java.util.UUID;
 
-public class MainActivity extends BaseDrawerActivity {
+public class MainActivity extends AppCompatActivity {
 
     BluetoothSocket mmSocket = null;
     BluetoothDevice mmDevice = null;
@@ -57,10 +57,7 @@ public class MainActivity extends BaseDrawerActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
-        getLayoutInflater().inflate(R.layout.activity_main,frameLayout);
-        setTitle("Main");
-
+        setContentView(R.layout.activity_main);
 
         //Setup Bluetooth Connection and Make sure it is enabled
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -92,15 +89,15 @@ public class MainActivity extends BaseDrawerActivity {
 
         ImageView circle = findViewById(R.id.circle);
         TextView connec = findViewById(R.id.connection);
-            //Use the BluetoothProfile.ServiceListener ??? - tells if connected or disconnected
-           if(connectionStatus) {
-                circle.setImageResource(R.drawable.green);
-                connec.setText("Robot Connected");
-            }
-            if(!connectionStatus) {
-                circle.setImageResource(R.drawable.red);
-                connec.setText("Robot Not Connected");
-            }
+        //Use the BluetoothProfile.ServiceListener ??? - tells if connected or disconnected
+        if(connectionStatus) {
+            circle.setImageResource(R.drawable.green);
+            connec.setText("Robot Connected");
+        }
+        if(!connectionStatus) {
+            circle.setImageResource(R.drawable.red);
+            connec.setText("Robot Not Connected");
+        }
         //TODO: Is the text changing correctly?
 
         //TODO: Pop-Up to Tell the User to Connect the Pi and Phone to Bluetooth if the Circle is Red
@@ -158,64 +155,59 @@ public class MainActivity extends BaseDrawerActivity {
             }
         });
     }
-        private void sendCommandRight() {
-            //TODO: Insert Code Here for Functionality
-            sendBtMsg("4");
-            //TODO: Add a Delay
-            Toast toast=Toast.makeText(this, "PyBot is turning right", Toast.LENGTH_LONG);
-            toast.show();
-            closeToast(toast);
-        }
-        private void sendCommandLeft() {
-            //TODO: Insert Code Here for Functionality
-            sendBtMsg("3");
-            //TODO: Add a Delay
-            Toast toast=Toast.makeText(this, "PyBot is turning left", Toast.LENGTH_LONG);
-            toast.show();
-            closeToast(toast);
-
-        }
-        private void sendCommandForward() {
-            //TODO: Insert Code Here for Functionality
-            sendBtMsg("1");
-            //TODO: Add a Delay
-            Toast toast=Toast.makeText(this, "PyBot is moving forwards", Toast.LENGTH_LONG);
-            toast.show();
-            closeToast(toast);
-
-        }
-        private void sendCommandBackwards() {
-            //TODO: Insert Code Here for Functionality
-            sendBtMsg("2");
-            //TODO: Add a Delay
-            Toast toast=Toast.makeText(this, "PyBot is moving backwards", Toast.LENGTH_LONG);
-            toast.show();
-            closeToast(toast);
-        }
-        private void sendCommand360() {
-            //TODO: Insert Code Here for Functionality
-            sendBtMsg("5");
-            //TODO: Add a Delay
-            Toast toast=Toast.makeText(this, "PyBot is turning 360 degrees", Toast.LENGTH_LONG);
-            toast.show();
-            closeToast(toast);
-        }
-
-        //closes the toast after a set amount of time
-        private void closeToast(final Toast toast2) {
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    toast2.cancel();
-                }
-            }, 500);
-        }
-    @Override
-    protected void OnResume()
-    {
-        super.onResume();
-        navigationView.getMenu().getItem(0).setChecked(true);
+    private void sendCommandRight() {
+        //TODO: Insert Code Here for Functionality
+        sendBtMsg("4");
+        //TODO: Add a Delay
+        Toast toast=Toast.makeText(this, "PyBot is turning right", Toast.LENGTH_LONG);
+        toast.show();
+        closeToast(toast);
     }
+    private void sendCommandLeft() {
+        //TODO: Insert Code Here for Functionality
+        sendBtMsg("3");
+        //TODO: Add a Delay
+        Toast toast=Toast.makeText(this, "PyBot is turning left", Toast.LENGTH_LONG);
+        toast.show();
+        closeToast(toast);
+
+    }
+    private void sendCommandForward() {
+        //TODO: Insert Code Here for Functionality
+        sendBtMsg("1");
+        //TODO: Add a Delay
+        Toast toast=Toast.makeText(this, "PyBot is moving forwards", Toast.LENGTH_LONG);
+        toast.show();
+        closeToast(toast);
+
+    }
+    private void sendCommandBackwards() {
+        //TODO: Insert Code Here for Functionality
+        sendBtMsg("2");
+        //TODO: Add a Delay
+        Toast toast=Toast.makeText(this, "PyBot is moving backwards", Toast.LENGTH_LONG);
+        toast.show();
+        closeToast(toast);
+    }
+    private void sendCommand360() {
+        //TODO: Insert Code Here for Functionality
+        sendBtMsg("5");
+        //TODO: Add a Delay
+        Toast toast=Toast.makeText(this, "PyBot is turning 360 degrees", Toast.LENGTH_LONG);
+        toast.show();
+        closeToast(toast);
+    }
+
+    //closes the toast after a set amount of time
+    private void closeToast(final Toast toast2) {
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                toast2.cancel();
+            }
+        }, 500);
+    }
+
 
 }
