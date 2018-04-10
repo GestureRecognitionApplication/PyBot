@@ -28,6 +28,7 @@ import java.io.UnsupportedEncodingException;
 import java.security.KeyStore;
 import java.util.UUID;
 
+//Cloud Activity Taken and Modified from: https://github.com/awslabs/aws-sdk-android-samples/tree/master/AndroidPubSub
 public class CloudActivity extends AppCompatActivity {
 
     static final String LOG_TAG = CloudActivity.class.getCanonicalName();
@@ -55,12 +56,12 @@ public class CloudActivity extends AppCompatActivity {
     EditText txtMessage;
 
     TextView tvLastMessage;
-    TextView tvClientId;
+    //TextView tvClientId;
     TextView tvStatus;
 
     Button btnConnect;
     Button btnSubscribe;
-    Button btnPublish;
+    //Button btnPublish;
     Button btnDisconnect;
 
     AWSIotClient mIotAndroidClient;
@@ -85,7 +86,7 @@ public class CloudActivity extends AppCompatActivity {
         txtMessage = (EditText) findViewById(R.id.txtMessage);
 
         tvLastMessage = (TextView) findViewById(R.id.tvLastMessage);
-        tvClientId = (TextView) findViewById(R.id.tvClientId);
+        //tvClientId = (TextView) findViewById(R.id.tvClientId);
         tvStatus = (TextView) findViewById(R.id.tvStatus);
 
         btnConnect = (Button) findViewById(R.id.btnConnect);
@@ -95,8 +96,8 @@ public class CloudActivity extends AppCompatActivity {
         btnSubscribe = (Button) findViewById(R.id.btnSubscribe);
         btnSubscribe.setOnClickListener(subscribeClick);
 
-        btnPublish = (Button) findViewById(R.id.btnPublish);
-        btnPublish.setOnClickListener(publishClick);
+        //btnPublish = (Button) findViewById(R.id.btnPublish);
+        //btnPublish.setOnClickListener(publishClick);
 
         btnDisconnect = (Button) findViewById(R.id.btnDisconnect);
         btnDisconnect.setOnClickListener(disconnectClick);
@@ -105,7 +106,7 @@ public class CloudActivity extends AppCompatActivity {
         // This UUID is "practically unique" but does not _guarantee_
         // uniqueness.
         clientId = UUID.randomUUID().toString();
-        tvClientId.setText(clientId);
+        //tvClientId.setText(clientId);
 
         // Initialize the AWS Cognito credentials provider
         credentialsProvider = new CognitoCachingCredentialsProvider(
@@ -333,14 +334,4 @@ public class CloudActivity extends AppCompatActivity {
         }
     };
 }
-/*import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
-public class CloudActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cloud);
-    }
-}*/
